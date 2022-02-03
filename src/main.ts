@@ -153,7 +153,7 @@ async function run(): Promise<void> {
       }
 
       // Create credentials file.
-      const credentialsPath = await client.createCredentialsFile(githubWorkspace);
+      const credentialsPath = await client.createCredentialsFile(githubWorkspace + "/.creds");
       logInfo(`Created credentials file at "${credentialsPath}"`);
 
       // Output to be available to future steps.
