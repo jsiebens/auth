@@ -153,8 +153,12 @@ async function run(): Promise<void> {
         );
       }
 
+      logInfo(`Created credentials file at "${pathjoin(githubWorkspace, '.creds')}"`);
+      const parentPath = pathjoin(githubWorkspace, '.creds')
+
+      logInfo(`Creating credentials file in "${parentPath}"`);
       // Create credentials file.
-      const credentialsPath = await client.createCredentialsFile(pathjoin(githubWorkspace, ".creds"));
+      const credentialsPath = await client.createCredentialsFile(parentPath);
       logInfo(`Created credentials file at "${credentialsPath}"`);
 
       // Output to be available to future steps.
